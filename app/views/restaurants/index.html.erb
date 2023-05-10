@@ -1,0 +1,12 @@
+<% @restaurants.each do |restaurant| %>
+<%= restaurant.name  %> : <%= restaurant.address %>
+<div class="card" style="width: 18rem;">
+  <%= image_tag "http://source.unsplash.com/featured/?#{restaurant.class}>&#{rand(1000)}" %>
+  <div class="card-body">
+    <h5 class="card-title"> <%= restaurant.name  %></h5>
+    <h5 class="card-title"> <%= restaurant.category  %></h5>
+    <p class="card-text"> <%= restaurant.address %></p>
+    <%= link_to 'Check it out', restaurant_path(restaurant) %>
+  </div>
+</div>
+<% end %>
